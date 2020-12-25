@@ -1,3 +1,5 @@
+import 'package:ecommerce/components/Custom_flat_button.dart';
+import 'package:ecommerce/components/custom_button_social.dart';
 import 'package:ecommerce/components/custom_text.dart';
 import 'package:ecommerce/components/custom_text_fromfield.dart';
 import 'package:ecommerce/constants.dart';
@@ -37,15 +39,53 @@ class LoginScreen extends StatelessWidget {
               onSaved: (value) {},
               validator: (value) {},
             ),
-            SizedBox(height: 30,),
+            SizedBox(
+              height: 30,
+            ),
             CustomTextFromField(
               text: "Password",
               hintText: "**********",
               onSaved: (value) {},
               validator: (value) {},
             ),
-            SizedBox(height: 15,),
-            CustomText(text: "Forget Password?",fontSize: 14,alignment: Alignment.topRight,)
+            SizedBox(
+              height: 15,
+            ),
+            CustomText(
+              text: "Forget Password?",
+              fontSize: 15,
+              alignment: Alignment.topRight,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            CustomFlatButton(
+              text: "SIGN IN",
+              onPress: () {},
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            CustomText(
+              text: "-OR-",
+              alignment: Alignment.center,
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            CustomButtonSocial(
+              image: "assets/images/facebook_icon.png",
+              text: "Sign In With Facebook",
+              onPress: () {},
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            CustomButtonSocial(
+              image: "assets/images/google_icon.png",
+              text: "Sign In With Google       ",
+              onPress: () {},
+            )
           ],
         ),
       ),
