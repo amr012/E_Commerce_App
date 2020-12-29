@@ -7,8 +7,8 @@ import 'package:ecommerce/view_model/auth_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LoginScreen extends GetWidget<AuthViewModel> {
-
+class LoginScreen extends StatelessWidget {
+ final _controller = Get.put(AuthViewModel());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,7 +88,7 @@ class LoginScreen extends GetWidget<AuthViewModel> {
               image: "assets/images/google_icon.png",
               text: "Sign In With Google       ",
               onPress: () {
-                controller.googleSignInMethod();
+                _controller.googleSignInMethod();
               },
             )
           ],
