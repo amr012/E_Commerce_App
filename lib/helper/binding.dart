@@ -1,5 +1,5 @@
 
-import 'package:ecommerce/view_model/auth_view_model.dart';
+import 'package:ecommerce/controller/auth_view_model.dart';
 import 'package:get/get.dart';
 
 class Binding extends Bindings{
