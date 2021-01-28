@@ -1,13 +1,15 @@
 
+import 'package:ecommerce/controller/base_controller.dart';
+import 'package:ecommerce/services/auth_services.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
-import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-class AuthViewModel extends GetxController{
+class AuthViewModel extends BaseController{
   GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
   FirebaseAuth _auth = FirebaseAuth.instance;
   FacebookLogin _facebookLogin = FacebookLogin();
+  AuthServices _services = new AuthServices();
 
   facebookSignInMethod() async {
   FacebookLoginResult result = await _facebookLogin.logIn(['email']);
@@ -32,6 +34,15 @@ class AuthViewModel extends GetxController{
   await _auth.signInWithCredential(credential);
   }
 
+  write(){
+    _services.insert();
+  }
+  read(){
+    _services.read();
+  }
+  delete(){
+    _services.delete();
+  }
 
 
 }

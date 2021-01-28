@@ -73,7 +73,9 @@ class LoginScreen extends StatelessWidget {
               ),
               CustomFlatButton(
                 text: "SIGN IN",
-                onPress: () {},
+                onPress: () {
+                  _controller.write();
+                },
               ),
               SizedBox(
                 height: 15,
@@ -88,7 +90,9 @@ class LoginScreen extends StatelessWidget {
               CustomButtonSocial(
                 image: "assets/images/facebook_icon.png",
                 text: "Sign In With Facebook",
-                onPress: () {},
+                onPress: () {
+                  _controller.read();
+                },
               ),
               SizedBox(
                 height: 15,
@@ -97,7 +101,8 @@ class LoginScreen extends StatelessWidget {
                 image: "assets/images/google_icon.png",
                 text: "Sign In With Google       ",
                 onPress: () {
-                  _controller.googleSignInMethod();
+                  _controller.delete();
+
                 },
               )
             ],

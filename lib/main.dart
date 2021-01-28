@@ -1,5 +1,6 @@
-import 'package:ecommerce/helper/binding.dart';
-import 'package:ecommerce/screens/login_screen.dart';
+import 'package:ecommerce/controller/auth_conroller.dart';
+import 'package:ecommerce/routes/app_routes.dart';
+import 'package:ecommerce/routes/app_screens.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,12 +12,15 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
+  // final _controller = Get.put(AuthController());
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
       // initialBinding: Binding(),
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      getPages: AppScreens.screens,
+      initialRoute: Routes.LOGIN_SCREEN,
+
     );
   }
 }
